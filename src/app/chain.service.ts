@@ -16,11 +16,8 @@ export class ChainService {
 
   getUncountedVotes(candidate){
     //Work on this.
-    let number;
-    this.db.object('/unpTrans/' + candidate.$key +'/votes')
-      .subscribe(response => {
-       return (response.$value);
-      });
+    return this.db.object('/unpTrans/' + candidate.$key +'/votes')
+    }
       
-}
+
 }

@@ -9,18 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class BlockComponent implements OnInit {
 
   constructor(private chainService : ChainService) { }
-
+  blockData;
   ngOnInit() {
   }
   
   mineBlock(){
-    var blockData;
+    
     this.chainService.getTrans()
       .subscribe(response => {
-        blockData = response;
-        console.log(response);
+        this.blockData = response;
+        console.log(this.blockData);
+        // console.log(response);
       });
-    console.log(blockData);
+    
   }
 
 

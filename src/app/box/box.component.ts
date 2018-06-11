@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class BoxComponent implements OnInit, OnDestroy {
   candidates: any[];
+  unpVotes;
 
   constructor(private service: PollService, private chainService: ChainService) {
   
@@ -25,11 +26,12 @@ export class BoxComponent implements OnInit, OnDestroy {
   }
 
   vote(candidate){  
+    
+    
     this.service.vote(candidate)
       .update({votes: ++candidate.votes});
 // Add a method to increment the value of votes in the Unprocessed Transactions
-    // this.chainService.addNewTrans(candidate)
-  //   .update({value: 1});
+    
   }
   ngOnDestroy(){
     this.subscription.unsubscribe();
