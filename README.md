@@ -1,5 +1,7 @@
 # LokChain
 
+A simple polling app, which (would) include a very simple blockchain-type system, where all the votes would be stored in blocks, which would be linked through hashes of each block. The hashes are calculated using SHA256 algortihm. This will be a very basic and very boiled down version of blockchain. Decentralisation would not be included. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
 ## Development server
