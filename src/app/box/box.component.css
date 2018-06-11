@@ -1,0 +1,14 @@
+col-cont{
+    display: flex;
+    flex-direction: column;
+}
+
+row-cont{
+    display: flex;
+    flex-direction: row;
+}
+
+media-madhur{
+    color: aquamarine;
+    border-radius: 15%;
+}

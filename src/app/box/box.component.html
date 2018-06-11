@@ -1,0 +1,8 @@
+<div class="media" *ngFor = "let candidate of candidates">
+  <img class="mr-3" width="100px" height="100px" src="{{ candidate.imgLink }}">  
+  <div class="media-body">
+    <h5 class="mt-0">{{ candidate.name }} {{candidate.votes}}</h5>
+    <p>{{ candidate.description }}</p>
+    <button class="btn btn-dark" (click) = "vote(candidate)">Vote</button>
+  </div>
+</div>

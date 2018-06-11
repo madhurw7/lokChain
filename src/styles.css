@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+
+*{
+    margin: 10px;
+}
+
+col-cont{
+    display: flex;
+    flex-direction: column;
+}
+
+row-cont{
+    display: flex;
+    flex-direction: row;
+}

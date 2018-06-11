@@ -1,0 +1,10 @@
+<form #f = "ngForm" (ngSubmit)="onSubmit(f.value)">
+  <div class="form-group">
+    <label for="string">String</label>
+    <input type="text" id="string" class="form-control" name = "string" ngModel placeholder="Enter string here.">
+  
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+  <br>
+  <label for="">Calculated Hash: {{hashOut}}</label>
+  </form>
