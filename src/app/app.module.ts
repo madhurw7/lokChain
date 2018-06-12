@@ -1,3 +1,4 @@
+
 import { ChainService } from './chain.service';
 import { PollService } from './poll.service';
 import { environment } from './../environments/environment';
@@ -16,11 +17,14 @@ import { PostsComponent } from './posts/posts.component';
 import { HttpModule } from '@angular/http';
 import { PostService } from './services/post.service';
 import { BlockComponent } from './block/block.component';
-import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavComponent } from './nav/nav.component';
+import { HttpClientModule } from '@angular/common/http'; 
+import * as firebase from 'firebase';
+import { SigninComponent } from './signin/signin.component';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 
 @NgModule({
@@ -32,10 +36,10 @@ import { NavComponent } from './nav/nav.component';
     PollComponent,
     PostsComponent,
     BlockComponent,
-    LoginComponent,
     AdminComponent,
     PageNotFoundComponent,
-    NavComponent
+    NavComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -45,17 +49,19 @@ import { NavComponent } from './nav/nav.component';
     AngularFireDatabaseModule,
     HttpModule,
     RouterModule.forRoot([
-      {path: 'login', component: LoginComponent},
+      {path: 'signin', component: SigninComponent},
       {path: 'admin', component: AdminComponent},
       {path: '', component: BoxComponent},
       {path: '**', component: PageNotFoundComponent}
-    ])
+    ]),
+    HttpClientModule
 
   ] ,
   providers: [
     PostService,
     PollService,
-    ChainService
+    ChainService,
+    AngularFireAuth
   ],
   bootstrap: [AppComponent]
 })
