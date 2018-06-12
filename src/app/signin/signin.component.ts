@@ -11,7 +11,9 @@ import * as firebase from 'firebase';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private afAuth: AngularFireAuth) { }
+  constructor(private afAuth: AngularFireAuth) { 
+    afAuth.authState.subscribe(response => {console.log(response)});
+  }
 
   ngOnInit() {
   }
@@ -19,6 +21,10 @@ export class SigninComponent implements OnInit {
   signin(){
     this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
     console.log("madhur");
+  }
+
+  signout() {
+    this.afAuth.auth.signOut();
   }
 
 }
