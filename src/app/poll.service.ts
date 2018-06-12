@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 export class PollService {
 
   constructor(private http: Http, private db: AngularFireDatabase) {
-    
+      
    }
 
   getCandidates(){

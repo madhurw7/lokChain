@@ -16,6 +16,11 @@ import { PostsComponent } from './posts/posts.component';
 import { HttpModule } from '@angular/http';
 import { PostService } from './services/post.service';
 import { BlockComponent } from './block/block.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -26,7 +31,11 @@ import { BlockComponent } from './block/block.component';
     HomeComponent,
     PollComponent,
     PostsComponent,
-    BlockComponent
+    BlockComponent,
+    LoginComponent,
+    AdminComponent,
+    PageNotFoundComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +43,14 @@ import { BlockComponent } from './block/block.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {path: 'login', component: LoginComponent},
+      {path: 'admin', component: AdminComponent},
+      {path: '', component: BoxComponent},
+      {path: '**', component: PageNotFoundComponent}
+    ])
+
   ] ,
   providers: [
     PostService,

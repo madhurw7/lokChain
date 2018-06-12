@@ -12,3 +12,7 @@ media-madhur{
     color: aquamarine;
     border-radius: 15%;
 }
+
+*{
+    margin: 5px;
+}
