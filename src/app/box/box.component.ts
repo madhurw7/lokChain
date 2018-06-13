@@ -40,6 +40,7 @@ userDetails;
  if (!this.userDetails.voted){
     this.service.vote(candidate)
       .update({votes: ++candidate.votes});
+    this.userService.changeVotedStatus(this.user);  
     }
  else (window.alert("You have already voted")); 
   }   

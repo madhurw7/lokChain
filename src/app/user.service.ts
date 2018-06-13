@@ -25,4 +25,10 @@ export class UserService {
   getUserDetails(user: firebase.User){
     return this.db.object('/users/' + user.uid);
   }
+
+  changeVotedStatus(user: firebase.User){
+    this.db.object('/users/' + user.uid).update({
+      voted: true
+    })
+  }
 }
