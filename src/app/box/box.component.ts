@@ -31,6 +31,7 @@ export class BoxComponent implements OnInit, OnDestroy {
       })
   }
 userDetails;
+alreadyVoted: boolean = false;
   vote(candidate){
     if (!this.user) this.router.navigateByUrl('/signin');
    else { 
@@ -42,7 +43,9 @@ userDetails;
       .update({votes: ++candidate.votes});
     this.userService.changeVotedStatus(this.user);  
     }
- else (window.alert("You have already voted")); 
+ else {
+  this.alreadyVoted = true;
+  } 
   }   
 // Add a method to increment the value of votes in the Unprocessed Transactions
     
