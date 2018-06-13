@@ -13,7 +13,12 @@
       <li class="nav-item">
         <a class="nav-link disabled" routerLink = "/admin" >Admin Panel</a>
       </li>
+      <li class="nav-item active" *ngIf = "user">
+        <a class="nav-link" href="#">  Hello, {{ user.displayName }}</a>
+      </li>
     </ul>
-      <button class="btn btn-outline-light my-2 my-sm-0" routerLink = "/signin">Login</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" routerLink = "/signin" *ngIf = "!user">Login</button>
+      <button class="btn btn-outline-danger my-2 my-sm-0" *ngIf = "user" (click) = "signout()">Logout</button>
+      
   </div>
 </nav>

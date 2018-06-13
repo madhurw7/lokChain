@@ -1,3 +1,5 @@
+import { AuthGuardService } from './auth-guard.service';
+import { AuthService } from './auth.service';
 
 import { ChainService } from './chain.service';
 import { PollService } from './poll.service';
@@ -50,7 +52,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
     HttpModule,
     RouterModule.forRoot([
       {path: 'signin', component: SigninComponent},
-      {path: 'admin', component: AdminComponent},
+      {path: 'admin', component: AdminComponent, canActivate: [AuthGuardService]},
       {path: '', component: BoxComponent},
       {path: '**', component: PageNotFoundComponent}
     ]),
@@ -61,7 +63,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
     PostService,
     PollService,
     ChainService,
-    AngularFireAuth
+    AngularFireAuth,
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
