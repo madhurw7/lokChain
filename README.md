@@ -6,8 +6,10 @@ Progress: Basic PollsApp is done, included a Proof-of-work type hashing method w
 
 WIP: Working on implementing the very basic blockchain. 
 
-ToDo: Add authentication and add the feature of one user can only vote once.
-Add admin feature and only he can access the vote count
+ Add authentication and add the feature of one user can only vote once.
+Add admin feature and only he can access the vote count (Done)
+
+ToDo: Create an admin panel where admin can handle the polls.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
