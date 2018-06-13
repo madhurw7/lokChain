@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import * as firebase from 'firebase';
 import { SigninComponent } from './signin/signin.component';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { UserService } from './user.service';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
     ChainService,
     AngularFireAuth,
     AuthService,
-    AuthGuardService
+    AuthGuardService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

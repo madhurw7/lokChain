@@ -15,8 +15,8 @@ export class NavComponent implements OnInit, OnDestroy {
     this.subscription = this.authService.state()
       .subscribe(response => {
       this.user = response;
-      console.log(response);
-      console.log(this.user);
+      // console.log(response);
+      // console.log(this.user);
     })
   }
 
