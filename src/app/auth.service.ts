@@ -2,6 +2,7 @@ import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
+import { FirebaseObjectFactory } from 'angularfire2/database';
 
 @Injectable()
 export class AuthService {
@@ -20,5 +21,9 @@ export class AuthService {
 
   state(){
     return this.afAuth.authState;
+  }
+
+  loginFb(){
+    this.afAuth.auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider());
   }
 }

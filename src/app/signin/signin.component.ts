@@ -18,5 +18,9 @@ export class SigninComponent implements OnInit {
     this.authService.login();
   }
 
+  signinFb(){
+    this.authService.loginFb();
+  }
+
 
 }
