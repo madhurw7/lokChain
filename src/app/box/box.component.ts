@@ -32,6 +32,7 @@ export class BoxComponent implements OnInit, OnDestroy {
   }
 userDetails;
 alreadyVoted: boolean = false;
+voteNoted: boolean = false;
   vote(candidate){
     if (!this.user) this.router.navigateByUrl('/signin');
    else { 
@@ -41,7 +42,8 @@ alreadyVoted: boolean = false;
  if (!this.userDetails.voted){
     this.service.vote(candidate)
       .update({votes: ++candidate.votes});
-    this.userService.changeVotedStatus(this.user);  
+    this.userService.changeVotedStatus(this.user);
+    this.voteNoted = true;  
     }
  else {
   this.alreadyVoted = true;

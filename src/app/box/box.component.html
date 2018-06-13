@@ -1,5 +1,6 @@
 <app-nav style="margin: 0px;"></app-nav>
 
+<div class="alert alert-success" *ngIf ="voteNoted">Your vote has been casted. Long live democracy!</div>
 
 <div class="alert alert-danger" *ngIf ="alreadyVoted">You have already voted once. Cannot vote again.</div>
 <div class="media" *ngFor = "let candidate of candidates">
