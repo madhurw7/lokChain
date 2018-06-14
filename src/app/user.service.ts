@@ -31,4 +31,16 @@ export class UserService {
       voted: true
     })
   }
+
+  resetUserStatus(){
+    console.log('Madhur')
+    this.db.list('/users').subscribe(response => {
+      for(var i = 0; i < response.length; i++){
+        this.db.object('/users/' +  response[i].$key ).update({
+          voted: false
+        })
+      }
+      
+    })
+  }
 }

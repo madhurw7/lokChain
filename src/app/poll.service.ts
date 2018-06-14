@@ -22,4 +22,15 @@ export class PollService {
     //Update the no. of votes corresponding to the candidate id
     return this.db.object('/candidates/' + candidate.$key)
   }
+
+  resetVotes(){
+    this.db.list('/candidates').subscribe(response => {
+      console.log(response);
+      for (var i = 0; i < response.length; i++){
+        this.db.object('/candidates/' + response[i].$key).update({
+          votes: 0
+        })
+      }
+    })
+  }
 }

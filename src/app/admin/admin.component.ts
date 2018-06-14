@@ -1,3 +1,5 @@
+import { PollService } from './../poll.service';
+import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService, private pollService: PollService) { }
 
   ngOnInit() {
+  }
+
+  resetPoll(){
+    this.userService.resetUserStatus();
+    this.pollService.resetVotes();
   }
 
 }
